@@ -7,7 +7,8 @@ services:
       - 8000:8000
     links:
       - redis
-    replicas: 4
+    deploy:
+      replicas: 4
   redis:
     image: redis:alpine
 
