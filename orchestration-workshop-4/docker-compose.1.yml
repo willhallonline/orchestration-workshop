@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  drupal:
+    image: drupal
+    ports:
+      - "8081:80"
+    networks:
+      - overlay
+    deploy:
+      mode: replicated
+      replicas: 2
+      endpoint_mode: vip
+  joomla:
+    image: joomla
+    ports:
+      - "8082:80"
+    networks:
+      - overlay
+    deploy:
+      mode: replicated
+      replicas: 2
+      endpoint_mode: vip
