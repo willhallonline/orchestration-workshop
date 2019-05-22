@@ -1,0 +1,11 @@
+version: "3.7"
+services:
+  mongodb:
+    image: mongodb
+    networks:
+       - overlay
+    deploy:
+      replicas: 1
+
+networks:
+  overlay:
