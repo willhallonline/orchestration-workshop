@@ -11,8 +11,8 @@ services:
       mode: replicated
       replicas: 2
       endpoint_mode: vip
-  joomla:
-    image: joomla
+  laravel:
+    image: bitnami/laravel
     ports:
       - "8082:80"
     networks:
@@ -20,7 +20,6 @@ services:
     deploy:
       mode: replicated
       replicas: 2
-      endpoint_mode: vip
 
 networks:
   overlay:

@@ -12,19 +12,14 @@ services:
       replicas: 2
       endpoint_mode: vip
 
-  mysql:
-    image: mysql
-    volumes:
-       - db-data:/var/lib/mysql/data
+  mariadb:
+    image: mariadb
     networks:
        - overlay
     deploy:
       mode: replicated
       replicas: 2
       endpoint_mode: dnsrr
-
-volumes:
-  db-data:
 
 networks:
   overlay:
