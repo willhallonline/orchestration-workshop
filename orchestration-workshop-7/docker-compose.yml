@@ -1,12 +1,15 @@
 version: '3'
 services:
   app:
-    image: 127.0.0.1:5000/stackdemo # docker service create --name registry --publish published=5000,target=5000 registry:2
+    image: gitlab.com/willhallonline/stackdemo:latest # docker service create --name registry --publish published=5000,target=5000 registry:2
     build: .
     ports:
       - 8000:8000
     links:
       - redis
+    deploy:
+      mode: replicated
+      replicas: 2
   redis:
     image: redis:alpine
 

@@ -9,7 +9,7 @@ metadata:
     io.kompose.service: app
   name: app
 spec:
-  replicas: 1
+  replicas: 2
   strategy: {}
   template:
     metadata:
@@ -18,7 +18,7 @@ spec:
         io.kompose.service: app
     spec:
       containers:
-      - image: 127.0.0.1:5000/stackdemo
+      - image: gitlab.com/willhallonline/stackdemo:latest
         name: app
         ports:
         - containerPort: 8000
